@@ -21,7 +21,6 @@ Route
     Route.resource('/users', 'UserController')
       .apiOnly()    
   })
-  .middleware('auth')
   .prefix(defaultApiRoute)
   .formats(['json'])
 
@@ -30,7 +29,7 @@ Route
     Route.resource('/gos', 'GoController')
       .apiOnly()    
   })
-  //.middleware('auth')
+  .middleware('auth')
   .prefix(defaultApiRoute)
   .formats(['json'])
 

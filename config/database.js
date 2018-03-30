@@ -2,7 +2,9 @@
 
 const Env = use('Env')
 const Helpers = use('Helpers')
-
+console.log('port!', Env.get('DB_PORT'))
+console.log('password!', Env.get('DB_PASSWORD'))
+console.log('host!', Env.get('DB_HOST'))
 module.exports = {
   /*
   |--------------------------------------------------------------------------
@@ -67,9 +69,11 @@ module.exports = {
   */
   pg: {
     client: 'pg',
+    //connection: 'postgresql://postgres:test@docker.for.win.localhost:5432/setgo'
     connection: {
-      host: Env.get('DB_HOST', 'localhost'),
-      port: Env.get('DB_PORT', ''),
+      host: Env.get('DB_HOST', ''),
+      //port: Env.get('DB_PORT', ''),
+      port: 5432,
       user: Env.get('DB_USER', 'root'),
       password: Env.get('DB_PASSWORD', ''),
       database: Env.get('DB_DATABASE', 'adonis')
